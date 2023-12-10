@@ -27,7 +27,7 @@ app.post("/tg", (req, res) => {
       req.body,
       {
         headers: {
-          "x-api-key": "J69frFMBFthmPTH7HTTm7NgF7p4dFRNf",
+          "x-api-key": "2r38bd283rHLmHqF2gPDBBNjGL4tfFQp",
           "Content-Type": "application/json",
         },
       }
