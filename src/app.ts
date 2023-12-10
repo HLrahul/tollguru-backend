@@ -16,7 +16,7 @@ const port = 3000;
 app.use(express.json());
 
 app.post("/", (req, res) => {
-  console.log(req.body);
+  console.log(req.body.requestBody);
 
   axios
     .post(
@@ -24,7 +24,7 @@ app.post("/", (req, res) => {
       req.body,
       {
         headers: {
-          "x-api-key": process.env.TOLLGURU_API_KEY,
+          "x-api-key": "J69frFMBFthmPTH7HTTm7NgF7p4dFRNf",
           "Content-Type": "application/json",
         },
       }
