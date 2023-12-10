@@ -17,7 +17,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Server running...");
+  res.send("Server running perfectly...");
 });
 
 app.post("/tg", (req, res) => {
