@@ -1,4 +1,5 @@
 import cors from "cors";
+import http from "http";
 import axios from "axios";
 import express from "express";
 
@@ -15,9 +16,11 @@ const port = 3000;
 
 app.use(express.json());
 
-app.post("/", (req, res) => {
-  console.log(req.body);
+app.get("/", (req, res) => {
+  res.send("Server running...");
+});
 
+app.post("/tg", (req, res) => {
   axios
     .post(
       "https://apis.tollguru.com/toll/v2/origin-destination-waypoints/",
@@ -38,6 +41,7 @@ app.post("/", (req, res) => {
     });
 });
 
-app.listen(port, () => {
+const server = http.createServer(app);
+server.listen(port, () => {
   console.log("Server is Up and Running!");
 });
