@@ -12,8 +12,6 @@ app.use(
   })
 );
 
-const port = 3000;
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -42,6 +40,7 @@ app.post("/tg", (req, res) => {
 });
 
 const server = http.createServer(app);
-server.listen(port, () => {
-  console.log("Server is Up and Running!");
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => {
+  console.log(`Server is Up and Running on Port: ${PORT}`);
 });
