@@ -25,7 +25,7 @@ app.post("/tg", (req, res) => {
       req.body,
       {
         headers: {
-          "x-api-key": "2r38bd283rHLmHqF2gPDBBNjGL4tfFQp",
+          "x-api-key": process.env.TOLLGURU_API_KEY || "Fmpf37tPbg3HGN2h9mfnJRjgnBjHQTHM",
           "Content-Type": "application/json",
         },
       }
@@ -35,7 +35,7 @@ app.post("/tg", (req, res) => {
     })
     .catch((error) => {
       console.error(error);
-      res.status(500).send("Something went wrong");
+      res.status(500).send(error);
     });
 });
 
